@@ -3,12 +3,18 @@
 
 This is a Next.js project built with TypeScript and TailwindCSS that features a customizable bottom sheet component. The bottom sheet can be used to display information and can be easily toggled using buttons available in the UI. It is implemented using React states and supports four different stages: closed, open, half-open, and full open.
 
-## Bottom Sheet Stages
+## Action Bottom Sheet Stages
 
 - **Closed:** In this stage, the bottom sheet is not visible.
 - **Open:** The bottom sheet takes up approximately 20vh of the screen.
 - **Half Open:** The bottom sheet occupies around 45vh of the screen.
 - **Full Open:** In this stage, the bottom sheet expands to take up 70vh of the screen.
+
+## Gesture Bottom Sheet Stages
+
+- **Open:** The bottom sheet takes up approximately 10vh of the screen.
+- **Half Open:** The bottom sheet occupies around 50vh of the screen.
+- **Full Open:** In this stage, the bottom sheet expands to take up 90vh of the screen.
 
 ## Getting Started
 
