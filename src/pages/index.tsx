@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import { TextButton } from "@/components/TextButton";
 import { BottomSheet } from "@/components/BottomSheet";
@@ -8,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-  const [isBottomSheetHalfOpen, setIsBottomSheetHalfOpen] = useState(true);
+  const [isBottomSheetHalfOpen, setIsBottomSheetHalfOpen] = useState(false);
   const [isBottomSheetFullOpen, setIsBottomSheetFullOpen] = useState(false);
   return (
     <main
@@ -29,7 +28,8 @@ export default function Home() {
           }}
         />
       </div>
-      <div className={`fixed bottom-0 left-0 right-0 `}>
+      <div
+        className={`fixed bottom-0 left-0 right-0 flex flex-col items-center justify-center`}>
         {isBottomSheetOpen || isBottomSheetFullOpen || isBottomSheetHalfOpen ? (
           <></>
         ) : (
@@ -43,7 +43,7 @@ export default function Home() {
               }}></div>
           </div>
         )}
-        <div>
+        <div className="w-full ">
           <BottomSheet
             close={() => {
               setIsBottomSheetOpen(false);

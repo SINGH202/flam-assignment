@@ -39,22 +39,22 @@ body {
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.thing {
+.bottom-sheet {
   transition: all 1s ease-in-out;
 }
-.thing.close {
+.bottom-sheet.close {
   transition: all 1s ease-in-out;
   height: 0px;
 }
-.thing.isOpen {
+.bottom-sheet.open {
   transition: all 1s ease-in-out;
   height: 20vh;
 }
-.thing.halfOpen {
+.bottom-sheet.halfOpen {
   transition: all 1s ease-in-out;
   height: 45vh;
 }
-.thing.fullOpen {
+.bottom-sheet.fullOpen {
   transition: all 1s ease-in-out;
   height: 70vh;
 }
