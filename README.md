@@ -23,7 +23,7 @@ Follow these steps to run the project locally on your machine:
 2. **Navigate to the project directory:**
 
    ```bash
-   cd your-project-name
+   cd flam-assignment
    ```
 
 3. **Install dependencies:**
