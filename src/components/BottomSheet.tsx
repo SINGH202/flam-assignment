@@ -61,7 +61,7 @@ export const BottomSheet = ({
       </div>
 
       <div
-        className={`flex items-center justify-center text-lg py-2 my-1 h-full text-white`}>
+        className={`flex items-center justify-center text-lg py-2 my-1 h-full bg-gradient-to-b from-yellow-50 to-red-300 rounded-lg`}>
         <span>Sample text</span>
       </div>
     </div>
