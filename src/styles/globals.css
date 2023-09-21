@@ -4,11 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 220;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -24,4 +24,37 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid black;
+}
+
+.box-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.bottom-sheet {
+  transition: all 1s ease-in-out;
+}
+.bottom-sheet.close {
+  transition: all 1s ease-in-out;
+  height: 0px;
+}
+.bottom-sheet.open {
+  transition: all 1s ease-in-out;
+  height: 20vh;
+}
+.bottom-sheet.halfOpen {
+  transition: all 1s ease-in-out;
+  height: 45vh;
+}
+.bottom-sheet.fullOpen {
+  transition: all 1s ease-in-out;
+  height: 70vh;
 }
