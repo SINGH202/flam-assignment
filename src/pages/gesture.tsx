@@ -28,7 +28,7 @@ export default function Gesture() {
     setIsGrabbed(false);
     setBottomSheetHeight((prevHeight) => {
       if (prevHeight < 25) {
-        return 8;
+        return 10;
       } else if (prevHeight > 75) {
         return 90;
       } else {
