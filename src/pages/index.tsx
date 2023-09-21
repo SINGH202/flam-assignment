@@ -1,71 +1,23 @@
-import { Inter } from "next/font/google";
-import { TextButton } from "@/components/TextButton";
-import { BottomSheet } from "@/components/BottomSheet";
-import { useState } from "react";
-
-const inter = Inter({ subsets: ["latin"] });
+import { useRouter } from "next/router";
 
 export default function Home() {
-  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
-  const [isBottomSheetHalfOpen, setIsBottomSheetHalfOpen] = useState(false);
-  const [isBottomSheetFullOpen, setIsBottomSheetFullOpen] = useState(false);
+  const router = useRouter();
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center p-10 ${inter.className}`}>
-      <div className="max-w-xs w-full">
-        <TextButton
-          label={
-            isBottomSheetOpen || isBottomSheetFullOpen || isBottomSheetHalfOpen
-              ? "Close"
-              : "Open"
-          }
-          action={() => {
-            isBottomSheetOpen || isBottomSheetFullOpen || isBottomSheetHalfOpen
-              ? setIsBottomSheetOpen(false)
-              : setIsBottomSheetOpen(!isBottomSheetOpen);
-            setIsBottomSheetHalfOpen(false);
-            setIsBottomSheetFullOpen(false);
-          }}
-        />
-      </div>
-      <div
-        className={`fixed bottom-0 left-0 right-0 flex flex-col items-center justify-center`}>
-        {isBottomSheetOpen || isBottomSheetFullOpen || isBottomSheetHalfOpen ? (
-          <></>
-        ) : (
-          <div className="flex items-center justify-center">
-            <div
-              className={"arrow-up cursor-pointer"}
-              onClick={() => {
-                setIsBottomSheetOpen(true);
-                setIsBottomSheetHalfOpen(false);
-                setIsBottomSheetFullOpen(false);
-              }}></div>
-          </div>
-        )}
-        <div className="w-full ">
-          <BottomSheet
-            close={() => {
-              setIsBottomSheetOpen(false);
-              setIsBottomSheetHalfOpen(false);
-              setIsBottomSheetFullOpen(false);
-            }}
-            halfOpen={() => {
-              setIsBottomSheetHalfOpen(!isBottomSheetHalfOpen);
-              setIsBottomSheetFullOpen(false);
-              setIsBottomSheetOpen(false);
-            }}
-            fullOpen={() => {
-              setIsBottomSheetFullOpen(!isBottomSheetFullOpen);
-              setIsBottomSheetHalfOpen(false);
-              setIsBottomSheetOpen(false);
-            }}
-            isHalfOpen={isBottomSheetHalfOpen}
-            isFullOpen={isBottomSheetFullOpen}
-            isOpen={isBottomSheetOpen}
-          />
-        </div>
-      </div>
-    </main>
+    <div className="flex items-center justify-center gap-5 text-lg font-mono font-semibold border border-black w-full h-[100vh]">
+      <span
+        onClick={() => {
+          router.push("/gesture");
+        }}
+        className="p-2 rounded-lg text-center hover:bg-black hover:text-white cursor-pointer">
+        Gesture Bottom Sheet
+      </span>
+      <span
+        onClick={() => {
+          router.push("actions");
+        }}
+        className="p-2 rounded-lg text-center hover:bg-black hover:text-white cursor-pointer">
+        Action Bottom Sheet
+      </span>
+    </div>
   );
 }
