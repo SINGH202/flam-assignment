@@ -8,7 +8,7 @@ export default function Gesture() {
   const getContactPosition = (event: any) =>
     event.touches ? event.touches[0] : event;
 
-  const onMouseDownStart = (e: any) => {
+  const onMouseDownStart = (event: any) => {
     setIsGrabbed(true);
     const { pageY } = getContactPosition(event);
     setCurrentPosition(pageY);
